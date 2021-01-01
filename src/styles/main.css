@@ -1,0 +1,396 @@
+body {
+    background: #C9D6FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+}
+
+#root {
+    position: relative;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+button {
+    border: none;
+    outline: none;
+}
+
+.category-list {
+    z-index: 0;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 100px auto;
+}
+
+.category-card {
+    margin-top: 60px;
+    width: 200px;
+    height: 200px;
+    border-radius: 40px;
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    cursor: pointer;
+    transition: 1.2s ease-out all;
+    margin-left: 60px;
+    margin-right: 60px;
+    background-image: linear-gradient(to right, red , yellow);
+}
+
+.category-card:hover {
+    transform: scale(0.9, 0.9);
+    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+      -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.category-card-image-wrapper {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+}
+
+.category-card-image-wrapper > img {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+    object-fit: cover;
+}
+
+.category-card-name {
+    text-align: center;
+    border-radius: 0px 0px 40px 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 0px;
+    height: 40px;
+    color: black;
+}
+
+.card-audio {
+    display: none;
+}
+
+.words-list {
+    z-index: 0;
+    width: 85%;
+    margin: 130px auto 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+
+.single-card-audio {
+    display: none;
+}
+
+@media all and (max-width: 500px) {
+    .category-list, .single-words-list {
+      flex-direction: column;   
+    }
+}
+
+/*side bar*/
+
+
+
+
+
+.switch-mode-button {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    background-image: url("../../public/img/power.svg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.cover {
+    width: 100%;
+    height: 100%;
+}
+
+.word-card {
+    background-color: rgb(105, 235, 240);
+    width: 200px;
+    margin-right: 100px;
+    margin-top: 30px;
+    border-radius: 20px;
+    transition: 1s;
+}
+
+.word-card:hover {
+    transform: scale(1.2);
+    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+.word-card-image img {
+    transition: 1s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.word-card-caption {
+    display: flex;
+    justify-content: space-between;
+    height: 90px;
+    transition: 1s;
+}
+
+.word-card-caption-title {
+    margin-top: 20px;
+    font-size: 1.8rem;
+}
+
+.flip-button {
+    background-image: url("../../public/img/refresh-button.svg");
+    transform: skewY(-12deg);
+    margin-top: 30px;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    background-size: 30px;
+    border: none;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0);
+    transition: 0.4s;
+}
+
+.flip-button:hover {
+    transition: 0.4s;
+    transform: rotate(180deg);
+}
+
+.listen-button {
+    background-image: url("../../public/img/volume.svg");
+    transform: skewY(-12deg);
+    margin-top: 30px;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    background-size: 30px;
+    border: none;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0);
+    transition: .3s;
+}
+
+.listen-button:hover {
+    margin-right: 5px;
+    transition: .3s;
+}
+.card-compact {
+    height: 200px;
+}
+
+.result-page {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../public/img/success.jpg');
+    background-repeat: no-repeat;
+    background-size: 70%;
+}
+
+.result-score-number {
+    font-size: 9rem;
+    text-align: center;
+}
+.win {
+    background-image: url('../../public/img/success.jpg');
+}
+
+.lose {
+    background-image: url('../../public/img/failure.jpg');
+}
+/* reusable */
+
+
+
+/*tiispe*/
+
+
+.burger-menu {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    left: 10%;
+    top: 10px;
+}
+
+
+/* MENU */
+.burger-menu span {
+    display: block;
+    background-color: black;
+    padding: 3px;
+    margin-bottom: 7px;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    background: #c0c0aa;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1cefff, #c0c0aa);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1cefff, #c0c0aa); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    flex-direction: column;
+    padding: 100px 20px;
+    transition: 1s;
+}
+
+.sidebar a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: blue;
+}
+
+.sidebar a:focus {
+    color: coral;
+}
+
+.sidebar-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background-color: rgba(250, 235, 215, 0);
+    font-size: 2rem;
+    outline: none;
+}
+
+.sidebar-closed {
+    left: -300px;
+    background-color: chartreuse;
+}
+
+/* */
+
+
+.switch-button {
+    width: 400px;
+    height: 40px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    will-change: transform;
+    z-index: 197 !important;
+    cursor: pointer;
+    transition: 0.3s ease all;
+    border: 1px solid black;
+}
+.switch-button-case {
+    display: inline-block;
+    background: none;
+    width: 49%;
+    height: 100%;
+    color: black;
+    position: relative;
+    border: none;
+    transition: 0.3s ease all;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    padding-bottom: 1px;
+    font-weight: 900;
+}
+.switch-button-case:hover {
+    color: rgb(29, 26, 26);
+    cursor: pointer;
+}
+.switch-button-case:focus {
+    outline: none;
+}
+.switch-button .active {
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: -1;
+    transition: 0.3s ease-out all;
+}
+.switch-button .active-case {
+    color: white;
+}
+.signature {
+    position: fixed;
+    font-family: sans-serif;
+    font-weight: 100;
+    bottom: 10px;
+    left: 0;
+    letter-spacing: 4px;
+    font-size: 10px;
+    width: 100vw;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.score-display {
+    height: 60px;
+    position: absolute;
+    top: 130px;
+    left: 10%;
+    display: flex;
+}
+
+
+.main-title {
+    position: absolute;
+    font-size: 5rem;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    font-weight: 700;
+}
+
+.stars-win {
+    width: 60px;
+    background-image: url('../../public/img/star-win.svg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.stars-lose {
+    width: 60px;
+    background-image: url('../../public/img/star.svg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.yellow {
+    color: coral;
+}
